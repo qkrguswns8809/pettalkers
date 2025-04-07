@@ -1,0 +1,19 @@
+npm install @react-navigation/native @react-navigation/native-stack   ------ 네비게이션사용
+npx expo install react-native-screens react-native-safe-area-context  ------ 종속성추가
+
+npm install @react-navigation/bottom-tabs ------ 메뉴하단바 추가
+
+npx expo install expo-font ------ 폰트추가
+npx expo install expo-splash-screen ------ 시작스크린추가
+
+npm install @react-native-firebase/app @react-native-firebase/firestore  ------ 파이어베이스연동시 필요
+npm install @react-native-firebase/auth ------ 마찬가지
+
+
+
+npm install react-native-image-picker-이미지 등록
+
+npm install @firebase/firestore@latest
+
+npm install react-native-maps
+npm install axios

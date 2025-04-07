@@ -1,0 +1,3 @@
+muliline:텍스트 입력시 줄바꿈 가능하도록(Enter와 같은 역할)
+
+Pressable:<Text>커스텀이 가능함

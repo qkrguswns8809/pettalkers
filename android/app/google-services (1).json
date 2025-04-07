@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "433783163952",
+    "project_id": "fettalkers",
+    "storage_bucket": "fettalkers.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433783163952:android:d334e7bcfdc528af5b31f5",
+        "android_client_info": {
+          "package_name": "com.anonymous.todoApp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtyVSvu5aN-L02Uhe5m7ZY4yor3A9VI74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
