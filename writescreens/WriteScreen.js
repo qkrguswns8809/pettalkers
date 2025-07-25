@@ -12,6 +12,7 @@ const WriteScreen = () => {
   const [content, setContent] = useState('');
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [category, setCategory] = useState('');
 
   // ✅ 이미지 선택 함수
   const pickImage = async () => {
@@ -73,6 +74,7 @@ const WriteScreen = () => {
     const newPost = {
       title,
       content,
+      category, 
       imageUrl,
       recommendations: 0,
       recommendedBy: [],
@@ -113,6 +115,24 @@ const WriteScreen = () => {
 
       {image && <Image source={{ uri: image }} style={styles.previewImage} />}
 
+<Text style={styles.label}>카테고리</Text>
+<View style={styles.categoryContainer}>
+  {['개', '고양이', '기타'].map((cat) => (
+    <TouchableOpacity
+      key={cat}
+      style={[
+        styles.categoryButton,
+        category === cat && styles.categoryButtonSelected,
+      ]}
+      onPress={() => setCategory(cat)}
+    >
+      <Text style={category === cat ? styles.categoryTextSelected : styles.categoryText}>
+        {cat}
+      </Text>
+    </TouchableOpacity>
+  ))}
+</View>
+
       {loading ? (
         <ActivityIndicator size="large" color="#1a73e8" />
       ) : (
@@ -130,6 +150,27 @@ const styles = StyleSheet.create({
   imagePicker: { backgroundColor: '#ddd', padding: 10, alignItems: 'center', marginBottom: 10 },
   imagePickerText: { color: '#333' },
   previewImage: { width: '100%', height: 200, marginBottom: 10, borderRadius: 8 },
+  categoryContainer: {
+  flexDirection: 'row',
+  justifyContent: 'space-around',
+  marginBottom: 16,
+},
+categoryButton: {
+  padding: 10,
+  borderWidth: 1,
+  borderColor: '#ccc',
+  borderRadius: 20,
+},
+categoryButtonSelected: {
+  backgroundColor: '#1a73e8',
+  borderColor: '#1a73e8',
+},
+categoryText: {
+  color: '#333',
+},
+categoryTextSelected: {
+  color: '#fff',
+},
 });
 
 export default WriteScreen;

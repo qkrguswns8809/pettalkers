@@ -64,6 +64,29 @@ const PostDetailScreen = ({ route, navigation }) => {
       });
     }
   };
+  const handleAddComment = async () => {
+  if (!commentText.trim()) return;
+
+  const newComment = {
+    id: Date.now().toString(), // 간단한 고유 ID
+    text: commentText,
+    authorEmail: user?.email || '익명',
+  };
+
+  const postRef = doc(db, 'posts', currentPost.id);
+
+  try {
+    await updateDoc(postRef, {
+      comments: arrayUnion(newComment),
+    });
+
+    setCommentText(''); // 입력창 초기화
+  } catch (error) {
+    console.error('댓글 추가 실패:', error);
+    Alert.alert('오류', '댓글을 추가하는 도중 문제가 발생했습니다.');
+  }
+};
+
 
   return (
     <View style={styles.container}>
@@ -101,7 +124,7 @@ const PostDetailScreen = ({ route, navigation }) => {
       />
 
       <TextInput style={styles.input} value={commentText} onChangeText={setCommentText} placeholder="댓글을 입력하세요" />
-      <Button title="댓글 추가" onPress={() => {}} />
+      <Button title="댓글 추가" onPress={handleAddComment} />
     </View>
   );
 };

@@ -40,6 +40,7 @@ const HomeStackScreen = () => {
       <Stack.Screen name="Chat" component={ChatRoomScreen} options={{ title: "실시간 채팅" }} />
       <Stack.Screen name="ChatScreen" component={ChatScreen} options={{ title: "채팅방" }} />
       <Stack.Screen name="GPTChat" component={GPTChatScreen} options={{ title: "챗봇" }} />
+
     </Stack.Navigator>
   );
 };
